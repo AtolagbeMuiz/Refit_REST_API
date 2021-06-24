@@ -29,5 +29,12 @@ namespace RefitRestAPISample.Controllers
             var apiResults = RestService.For<ITodoApi>(_config.APIBaseURL);
             return Ok(await apiResults.GetTodos());
         }
+
+        [HttpGet("GetTodo/{Id}")]
+        public async Task<IActionResult> GetTodo(int Id)
+        {
+            var apiResults = RestService.For<ITodoApi>(_config.APIBaseURL);
+            return Ok(await apiResults.GetTodo(Id));
+        }
     }
 }

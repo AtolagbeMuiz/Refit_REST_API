@@ -11,5 +11,8 @@ namespace RefitRestAPISample.Abstraction
     {
         [Get("/todos")]
         Task<IEnumerable<TodoModel>> GetTodos();
+
+        [Get("/todos/{Id}")]
+        Task<TodoModel> GetTodo(int Id);
     }
 }
